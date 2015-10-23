@@ -1,23 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing All Items</h1>
+<h1>To Do</h1>
+<!-- item form  -->
 
+<section>
+  <%= render 'form' %>
+</section>
 
-
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th>Completed</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <%= render @items %>
-  </tbody>
-</table>
-
+<section>
+  <%= render @items %>
+ </section>
 <br>
 
 <%= link_to 'New Item', new_item_path %>
