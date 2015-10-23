@@ -8,8 +8,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <section id='wrapper'>
+    
+    <%= yield %>
 
-<%= yield %>
-
+    <footer>
+     Tyler Korthal &copy; <%= Time.new().year %>
+    </footer>
+  </section>
 </body>
 </html>
