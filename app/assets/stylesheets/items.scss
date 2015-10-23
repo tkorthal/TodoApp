@@ -28,6 +28,18 @@ html, body{
   height: 50px;
 }
 
+.float-right {
+  float: right;
+}
+
+.delete {
+  color: #D1D1D1;
+
+  &:hover{
+    color: black;
+  }
+}
+
 footer {
   margin-top: 10px;
   text-align: center;

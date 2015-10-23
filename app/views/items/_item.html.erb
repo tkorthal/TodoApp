@@ -3,6 +3,7 @@
       <%= print(' checked ') if item.completed == true %> >
 
     <%= item.content %>
+    <%= link_to 'Destroy', item, method: :delete%><i class="material-icons float-right delete">clear</i>
   </p>
   <!-- <td><%= link_to 'Show', item %></td>
   <td><%= link_to 'Edit', edit_item_path(item) %></td>

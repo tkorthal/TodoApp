@@ -16,6 +16,7 @@ class ItemsController < ApplicationController
   # GET /items/new
   def new
     @item = Item.new
+
   end
 
   # GET /items/1/edit
@@ -31,6 +32,7 @@ class ItemsController < ApplicationController
       if @item.save
         format.html { redirect_to @item, notice: 'Item was successfully created.' }
         format.json { render :show, status: :created, location: @item }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @item.errors, status: :unprocessable_entity }
@@ -57,7 +59,7 @@ class ItemsController < ApplicationController
   def destroy
     @item.destroy
     respond_to do |format|
-      format.html { redirect_to items_url, notice: 'Item was successfully destroyed.' }
+      format.html { redirect_to items_url, notice: 'Item was successfully deleted.' }
       format.json { head :no_content }
     end
   end
