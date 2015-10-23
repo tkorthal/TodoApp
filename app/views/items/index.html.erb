@@ -1,15 +1,21 @@
-<p id="notice"><%= notice %></p>
+<section id='wrapper'>
+  <section id='list'>
+    <p id="notice"><%= notice %></p>
 
-<h1>To Do</h1>
-<!-- item form  -->
+    <h1>To Do</h1>
+    <!-- item form  -->
 
-<section>
-  <%= render 'form' %>
+    <section>
+      <%= render 'form' %>
+    </section>
+
+    <section>
+      <%= render @items %>
+     </section>
+    <!-- <%= link_to 'New Item', new_item_path %> -->
+
+  </section>
+  <footer>
+    Tyler Korthal &copy; <%= Time.new().year %>
+  </footer>
 </section>
-
-<section>
-  <%= render @items %>
- </section>
-<br>
-
-<%= link_to 'New Item', new_item_path %>
