@@ -1,12 +1,21 @@
-  <p>
-    <input type = 'checkbox' name = 'completed'  
-      <%= print(' checked ') if item.completed == true %> >
+  <section class='item-row'>
 
-    <%= item.content %>
-    <%= link_to item, method: :delete, remote: true do %>
-      <i class="material-icons float-right delete">clear</i>
+    <!-- <%= link_to item, method: :update  do %> -->
+      <input type = 'checkbox' name = 'completed'  
+      <%= print(' checked ') if item.completed == true %> 
+    >
+    <!-- <% end %> -->
+    
+
+    <%= link_to item, method: :delete, remote: true  do %>
+      <i class="material-icons float-right icon">clear</i>
     <% end %>
-  </p>
+
+      
+        <%= item.content.html_safe %>
+     
+    
+  </section>
   <!-- <td><%= link_to 'Show', item %></td>
   <td><%= link_to 'Edit', edit_item_path(item) %></td>
-  <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+  <td><%= link_to 'Destroy', item, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></td> -->

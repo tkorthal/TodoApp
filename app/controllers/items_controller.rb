@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-
+  before_action :sanitize_content, only: [:create, :edit, :update]
   # GET /items
   # GET /items.json
   def index
@@ -61,7 +61,13 @@ class ItemsController < ApplicationController
     respond_to do |format|
       format.html { redirect_to items_url, notice: 'Item was successfully deleted.' }
       format.json { head :no_content }
+      format.js
     end
+  end
+
+  def sanitize_content
+    #binding.pry
+    #@item.content = @item.content.grep(/<.*((script)|(href)|(src)).*>/, "SANITIZED")
   end
 
   private

@@ -6,8 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 Item.destroy_all
+List.destroy_all
 
-Item.create!([
+items_array = Item.create!([
   {
     content: "Eggs",
     completed: false
@@ -33,3 +34,18 @@ Item.create!([
 ])
 
 p "Created #{Item.count} items"
+
+List.create!([
+  {
+    title: "Shopping",
+    #items: [items_array[1],items_array[2]]
+  }, 
+
+  {
+    title: "To-do!",
+    #items: [items_array[3]]
+  }
+
+])
+
+p "Created #{List.count} lists"
