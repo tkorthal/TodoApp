@@ -4,22 +4,13 @@
                  <%= 'item-row' %>
                  <% end %> ">
 
-  <!--   <%= link_to item, method: :update  do %> 
-      <input type = 'checkbox' name = 'completed'  
-      <%= print(' checked ') if item.completed == true %> 
-    >
-    <% end %>  -->
-
     <%= check_box_tag('completed', '', item.completed, remote: true, method: :update) %>
     
-
     <%= link_to item, method: :delete, remote: true  do %>
       <i class="material-icons float-right icon">clear</i>
     <% end %>
 
-        <%= item.content.html_safe %>
+    <%= item.content.html_safe %>
     
   </section>
-  <!-- <td><%= link_to 'Show', item %></td>
-  <td><%= link_to 'Edit', edit_item_path(item) %></td>
-  <td><%= link_to 'Destroy', item, method: :delete, remote: true, data: { confirm: 'Are you sure?' } %></td> -->
+  

@@ -49,7 +49,7 @@ List.create!([
 
   {
     title: "To-do!",
-    #items: [items_array[3]]
+    items: [items_array[3]]
   }
 
 ])

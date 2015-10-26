@@ -10,6 +10,8 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
+    @list = List.find_by_id(params[:id])
+    @items = @list.items
   end
 
   # GET /lists/new
@@ -30,6 +32,7 @@ class ListsController < ApplicationController
       if @list.save
         format.html { redirect_to @list, notice: 'List was successfully created.' }
         format.json { render :show, status: :created, location: @list }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @list.errors, status: :unprocessable_entity }

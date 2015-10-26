@@ -1,10 +1,9 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
-  before_action :sanitize_content, only: [:create, :edit, :update]
+  before_action :sanitize_content, only: [:edit, :update]
   # GET /items
   # GET /items.json
   def index
-    new
     @items = Item.all
   end
 
@@ -27,6 +26,7 @@ class ItemsController < ApplicationController
   # POST /items.json
   def create
     @item = Item.new(item_params)
+    sanitize_content
 
     respond_to do |format|
       if @item.save
@@ -67,11 +67,11 @@ class ItemsController < ApplicationController
 
   def sanitize_content
     #binding.pry
-    #@item.content = @item.content.grep(/<.*((script)|(href)|(src)).*>/, "SANITIZED")
-  end
-
-  def checked?
-    @item.checked == true
+    if /<.*((script)|(href)|(src)).*>/.match(@item.content) != nil
+      @item.content = "<i>Item contained illegal tags</i>"
+    else
+      @item.content
+    end
   end
 
   private

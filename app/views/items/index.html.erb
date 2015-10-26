@@ -3,11 +3,7 @@
   <h1>To Do</h1>
   <p id="notice"><%= notice %></p>
 
-
-  <i id='add_item_button' class="material-icons icon">add</i>
-  <section id='new-item-form'>
-    <%= render 'form' %>
-  </section>
+  <%= render 'form' %>
 
   <section class='item-list'>
     <%= render @items %>

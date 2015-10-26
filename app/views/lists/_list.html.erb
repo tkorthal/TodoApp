@@ -1,0 +1,13 @@
+<section class='list'>
+  <h2>
+    <%= link_to list, method: :delete, remote: true  do %>
+      <i class="material-icons  icon">clear</i>
+     <% end %>
+    <%= list.title %> 
+  </h2>
+
+  <%= render 'items/form' %>
+  <% list.items.each do |item| %>
+    <%= render item %>
+  <% end %>
+</section>
