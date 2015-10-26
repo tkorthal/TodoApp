@@ -70,6 +70,10 @@ class ItemsController < ApplicationController
     #@item.content = @item.content.grep(/<.*((script)|(href)|(src)).*>/, "SANITIZED")
   end
 
+  def checked?
+    @item.checked == true
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_item

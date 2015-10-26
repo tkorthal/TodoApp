@@ -1,10 +1,16 @@
-  <section class='item-row'>
+  <section class=<% if item.checked? %> 
+                 <%= 'completed item-row' %>
+                 <% else %>
+                 <%= 'item-row' %>
+                 <% end %> >
 
-    <!-- <%= link_to item, method: :update  do %> -->
+  <!--   <%= link_to item, method: :update  do %> 
       <input type = 'checkbox' name = 'completed'  
       <%= print(' checked ') if item.completed == true %> 
     >
-    <!-- <% end %> -->
+    <% end %>  -->
+
+    <%= check_box_tag('completed', '', item.completed, remote: true, method: :update) %>
     
 
     <%= link_to item, method: :delete, remote: true  do %>

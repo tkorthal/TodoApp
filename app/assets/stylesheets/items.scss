@@ -67,6 +67,11 @@ input[name='commit']{
   width: 400px;
 }
 
+.completed {
+  text-decoration: line-through;
+  color: #717171;
+}
+
 footer {
   margin-top: 10px;
   text-align: center;
