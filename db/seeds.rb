@@ -33,12 +33,18 @@ items_array = Item.create!([
   }
 ])
 
+an_item = Item.create!(
+  {
+    content: "A thing",
+    completed: true
+  })
+
 p "Created #{Item.count} items"
 
 List.create!([
   {
     title: "Shopping",
-    #items: [items_array[1],items_array[2]]
+    items: [an_item]
   }, 
 
   {
