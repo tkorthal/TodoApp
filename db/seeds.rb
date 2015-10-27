@@ -10,6 +10,11 @@ List.destroy_all
 
 items_array = Item.create!([
   {
+    content: "Laundry",
+    completed: false
+  },
+
+  {
     content: "Eggs",
     completed: false
   },
@@ -35,7 +40,7 @@ items_array = Item.create!([
 
 an_item = Item.create!(
   {
-    content: "A thing",
+    content: "Sausage",
     completed: true
   })
 
@@ -44,12 +49,12 @@ p "Created #{Item.count} items"
 List.create!([
   {
     title: "Shopping",
-    items: [an_item]
+    items: [an_item, items_array[1], items_array[2]]
   }, 
 
   {
     title: "To-do!",
-    items: [items_array[3]]
+    items: [items_array[0], items_array[3], items_array[4]]
   }
 
 ])

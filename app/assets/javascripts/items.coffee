@@ -4,8 +4,10 @@
 $ ->
   $('.add_item_button').on 'click', (e) ->
     e.preventDefault()
-    $('.new-item-form').toggle()
-    if ($('.add_item_button').html()== 'remove')
-      $('.add_item_button').html('add')
+    closest = $('section.new-item-form').first()
+    console.log(closest)
+    $(closest).toggle()
+    if ($(this).html()== 'remove')
+      $(this).html('add')
     else
-      $('.add_item_button').html('remove')
+      $(this).html('remove')
