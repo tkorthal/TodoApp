@@ -8,8 +8,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <header>
+    <%= link_to 'View All Lists', lists_path %> &bullet;
+    <%= link_to 'View All Items', items_path %>
+  </header>
   <section id='wrapper'>
-    
+
     <%= yield %>
 
     <footer>

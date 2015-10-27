@@ -1,18 +1,8 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Title:</strong>
-  <%= @list.title %>
-</p>
-
-
 <section id='list'>
 
   <h1>To Do</h1>
   <p id="notice"><%= notice %></p>
 
-
-  <i id='add_item_button' class="material-icons icon">add</i>
   <section id='new-item-form'>
     <%= render 'items/form', :locals => { :item => Item.new } %>
   </section>
@@ -21,5 +11,4 @@
     <%= render @items %>
    </section>
 </section>
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+

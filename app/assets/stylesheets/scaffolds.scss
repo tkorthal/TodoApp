@@ -1,12 +1,26 @@
 a {
   text-decoration: none;
+  color: black;
 }
+
+header{
+  width: 100%;
+  background-color: white;
+  padding: 5px;
+  margin-top: 0px;
+  text-align: center;
+  background-color: #D4E994;
+}
+
 div {
   &.field, &.actions {
     margin-bottom: 10px;
   }
 }
-
+h1 {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 h2 {
   font-size: 16pt;
   margin-top: 0px;

@@ -6,7 +6,7 @@
     <%= list.title %> 
   </h2>
 
-  <%= render 'items/form' %>
+  <%= render 'items/form', this_id: list.id %>
   <% list.items.each do |item| %>
     <%= render item %>
   <% end %>
