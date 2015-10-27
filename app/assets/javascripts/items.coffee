@@ -4,7 +4,7 @@
 $ ->
   $('.add_item_button').on 'click', (e) ->
     e.preventDefault()
-    closest = $('section.new-item-form').first()
+    closest = $(this).siblings('section.new-item-form').first()
     console.log(closest)
     $(closest).toggle()
     if ($(this).html()== 'remove')
