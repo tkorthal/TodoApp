@@ -12,11 +12,13 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Add list" %>
-  </div>
+  <section class='list'>
+    <div class="field">
+      <%= f.label 'New List' %><br>
+      <%= f.text_field :title %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Add list" %>
+    </div>
+  </section>
 <% end %>

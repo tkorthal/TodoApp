@@ -4,7 +4,15 @@
 
 .list {
   padding: 15px;
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #D4E994; 
   margin-bottom: 10px;
 }
+
+// @media screen and (min-width: 1024px){
+//   .list {
+//     float: left;
+//     width: 300px
+//   }
+
+// }
