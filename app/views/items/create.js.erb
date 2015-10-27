@@ -1,2 +1,2 @@
-$('.item-list').append('<%=j render @item %>');
-$('#new_item').trigger('reset');
+$('#list<%=@item.list_id%>').append('<%=j render @item %>');
+$('.new_item').trigger('reset');
