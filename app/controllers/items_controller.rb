@@ -45,8 +45,8 @@ class ItemsController < ApplicationController
   # PATCH/PUT /items/1.json
   def update
     respond_to do |format|
-      if @item.update(item_params)
-        format.html { redirect_to @item, notice: 'Item was successfully updated.' }
+      if @item.update(update_params)
+        format.html { render :show, notice: 'Item was successfully updated.' }
         format.json { render :show, status: :ok, location: @item }
       else
         format.html { render :edit }
@@ -84,5 +84,9 @@ class ItemsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def item_params
       params.require(:item).permit(:content, :completed, :list_id)
+    end
+
+    def update_params
+      params.permit(:content, :completed)
     end
 end

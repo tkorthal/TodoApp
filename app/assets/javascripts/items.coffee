@@ -5,9 +5,9 @@ $ ->
   $('.add_item_button').on 'click', (e) ->
     e.preventDefault()
     closest = $(this).siblings('section.new-item-form').first()
-    console.log(closest)
     $(closest).toggle()
     if ($(this).html()== 'remove')
       $(this).html('add')
     else
       $(this).html('remove')
+      $(closest).find('textarea').focus();

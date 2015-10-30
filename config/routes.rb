@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   end
   resources :items
 
+  patch '/items/:id', to: 'items#update'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

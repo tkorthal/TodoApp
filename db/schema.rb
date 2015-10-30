@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151027130217) do
+ActiveRecord::Schema.define(version: 20151027180744) do
 
   create_table "items", force: :cascade do |t|
     t.text    "content"
@@ -23,7 +23,6 @@ ActiveRecord::Schema.define(version: 20151027130217) do
 
   create_table "lists", force: :cascade do |t|
     t.string   "title"
-    t.datetime "created_at"
     t.datetime "created_on"
   end
 

@@ -1,16 +1,16 @@
-  <section id='<%="item#{item.id}"%>' class="<% if item.checked? %> 
-                 <%= 'completed item-row' %>
-                 <% else %>
-                 <%= 'item-row' %>
-                 <% end %> ">
+<section id='<%="item#{item.id}"%>' class="<% if item.checked? %> 
+               <%= 'completed item-row' %>
+               <% else %>
+               <%= 'item-row' %>
+               <% end %> ">
 
-    <%= check_box_tag('completed', '', item.completed, remote: true, method: :update) %>
-    
-    <%= link_to item, method: :delete, remote: true  do %>
-      <i class="material-icons float-right icon">clear</i>
-    <% end %>
+  <%= check_box_tag('completed', 'completed', item.completed) %>
+  
+  <%= link_to item, method: :delete, remote: true  do %>
+    <i class="material-icons float-right icon">clear</i>
+  <% end %>
 
-    <%= item.content.html_safe %>
-    
-  </section>
+  <%= item.content.html_safe %>
+  
+</section>
   

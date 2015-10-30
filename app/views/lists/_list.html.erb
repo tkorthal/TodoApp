@@ -1,6 +1,6 @@
 <section class='list' id='<%="list#{list.id}" %>'>
   <h2>
-    <%= link_to list, method: :delete, remote: true  do %>
+    <%= link_to list, method: :delete, remote: true, data: { confirm: 'Delete?' }  do %>
       <i class="material-icons  icon">clear</i>
      <% end %>
     <%= list.title %> 
