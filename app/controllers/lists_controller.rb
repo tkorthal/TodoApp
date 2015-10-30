@@ -15,6 +15,11 @@ class ListsController < ApplicationController
   def show
     @list = List.find_by_id(params[:id])
     @items = @list.items
+
+    respond_to do |format| 
+      format.html 
+      format.js
+    end
   end
 
   # GET /lists/new

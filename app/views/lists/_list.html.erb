@@ -3,7 +3,7 @@
     <%= link_to list, method: :delete, remote: true do %>
       <i class="material-icons  icon">clear</i>
      <% end %>
-    <%= list.title %> 
+    <%= link_to list.title, list_path(list) %> 
   </h2>
 
   <%= render 'items/form', this_id: list.id %>

@@ -15,7 +15,7 @@
 //= require turbolinks
 //= require_tree .
 function addItemListeners(listId){
-  $('#list'+listId +' i').on('click', function(e) {
+  $('#list'+listId +' i.add_item_button').on('click', function(e) {
     e.preventDefault();
     var closest = $(this).siblings('section.new-item-form').first();
     $(closest).toggle();
