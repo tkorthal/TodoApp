@@ -14,3 +14,22 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+function addToggleCompleted(itemId, context){
+  $('#item' +itemId + ' input[type=checkbox]').on('click', function(e){
+    var checked = context.is(":checked")
+    $.ajax({
+        method: "PATCH",
+        url: ('/items/' +  itemId),
+        data: { completed: checked }
+      })
+        .done(function( msg ){
+          itemRow = $('#item'+itemId);
+          if (checked){
+            itemRow.addClass('completed');
+          } else {
+            itemRow.removeClass('completed');
+          }
+    });
+  });
+}

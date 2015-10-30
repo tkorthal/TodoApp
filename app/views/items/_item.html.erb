@@ -12,5 +12,9 @@
 
   <%= item.content.html_safe %>
   
+  <script>
+    var context = $('#item<%= item.id %> input[type=checkbox]');
+    addToggleCompleted('<%= item.id %>', context);
+  </script>
 </section>
   

@@ -2,14 +2,3 @@
 <% this_list ||= '' %>
 $('#list<%=this_list%>').append('<%=j render @item %>');
 $('.new_item').trigger('reset');
-$('#item<%= @item.id %> input[type=checkbox]').on('click', function(e){
-  var context = $('#item<%= @item.id %> input[type=checkbox]');
-    $.ajax({
-      method: "PATCH",
-      url: '/items/<%= @item.id %>',
-      data: { completed: context.is(":checked") }
-    })
-      .done(function( msg ){
-        alert("done!");
-      });
-});
