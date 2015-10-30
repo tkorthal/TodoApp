@@ -1,3 +1,11 @@
 == README
 
 A basic Rails app designed to display and edit a persistant to do list
+---
+===Current Features
+  * Input validation on list title and item content
+  * Asynchronous updates for delete, create, and completed
+  * Toggle strikethrough on check/uncheck
+  * Display item content as pure HTML
+  * Sanitizes content by checking for script, href, and anchor tags
+  * Show/hide form on toggle button
