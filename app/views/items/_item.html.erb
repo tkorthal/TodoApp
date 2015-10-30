@@ -10,8 +10,9 @@
     <i class="material-icons float-right icon">clear</i>
   <% end %>
 
-  <%= item.content.html_safe %>
-  
+  <%= link_to item do %>
+  <%= item.content ? item.content.html_safe : ''%>
+  <% end %>
   <script>
     var context = $('#item<%= item.id %> input[type=checkbox]');
     addToggleCompleted('<%= item.id %>', context);

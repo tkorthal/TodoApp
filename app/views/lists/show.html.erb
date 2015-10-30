@@ -1,14 +1,19 @@
-<section id='list'>
+<section id='list<%= @list.id %>' class='list'>
 
   <h1>To Do</h1>
   <p id="notice"><%= notice %></p>
 
   <section id='new-item-form'>
-    <%= render 'items/form', :locals => { :item => Item.new } %>
+    <%= render 'items/form', this_id: @list.id %>
   </section>
+
+  <script>
+    var listId = '<%= @list.id %>';
+    addItemListeners(listId);
+  </script>
 
   <section class='item-list'>
     <%= render @items %>
-   </section>
+  </section>
 </section>
 

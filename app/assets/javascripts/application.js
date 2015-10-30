@@ -14,9 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
-function addItemListeners(){
-  $('.add_item_button').on('click', function(e) {
+function addItemListeners(listId){
+  $('#list'+listId +' i').on('click', function(e) {
     e.preventDefault();
     var closest = $(this).siblings('section.new-item-form').first();
     $(closest).toggle();
@@ -28,6 +27,7 @@ function addItemListeners(){
     }
   });
 }
+
 
 function addToggleCompleted(itemId, context){
   $('#item' +itemId + ' input[type=checkbox]').on('click', function(e){
