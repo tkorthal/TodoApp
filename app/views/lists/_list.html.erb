@@ -11,7 +11,7 @@
     <%= render item %>
   <% end %>
   <script>
-    var listId = '<%= list.id %>';
-    addItemListeners(listId);
+    addItemListeners('<%= list.id %>');
+    $('#list<%= list.id %>').css("background-color", '<%= list.color %>');
   </script>
 </section>

@@ -47,3 +47,16 @@ function addToggleCompleted(itemId, context){
     });
   });
 }
+
+function updateBGColor(listId, newColor){
+  $.ajax({
+        method: "PATCH",
+        url: ('/lists/' +  listId),
+        data: { 
+
+          color: newColor }
+      })
+        .done(function( msg ){
+          $("#list"+listId).css("background-color", newColor);
+    });
+}
